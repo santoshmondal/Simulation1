@@ -1,4 +1,4 @@
-package com.example.santosh.simulation1.pojo.response;
+package com.affixus.simulation.pojo.response;
 
 import java.io.Serializable;
 import java.util.Date;

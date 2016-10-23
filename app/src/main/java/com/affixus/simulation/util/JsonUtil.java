@@ -1,4 +1,4 @@
-package com.example.santosh.simulation1.util;
+package com.affixus.simulation.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerationException;

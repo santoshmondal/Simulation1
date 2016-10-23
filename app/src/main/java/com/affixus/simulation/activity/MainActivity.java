@@ -1,4 +1,4 @@
-package com.example.santosh.simulation1;
+package com.affixus.simulation.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.santosh.simulation1.pojo.response.NewsPojo;
-import com.example.santosh.simulation1.pojo.response.ResponsePojo;
-import com.example.santosh.simulation1.restful.RestApi;
-import com.example.santosh.simulation1.util.JsonUtil;
+import com.affixus.simulation.pojo.response.NewsPojo;
+import com.affixus.simulation.pojo.response.ResponsePojo;
+import com.affixus.simulation.restful.RestApi;
+import com.affixus.simulation.util.JsonUtil;
 
 import java.util.List;
 

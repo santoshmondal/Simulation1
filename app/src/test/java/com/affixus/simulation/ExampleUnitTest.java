@@ -1,4 +1,4 @@
-package com.example.santosh.simulation1;
+package com.affixus.simulation;
 
 import org.junit.Test;
 

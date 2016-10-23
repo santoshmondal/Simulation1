@@ -1,6 +1,6 @@
-package com.example.santosh.simulation1.pojo.response;
+package com.affixus.simulation.pojo.response;
 
-import com.example.santosh.simulation1.pojo.BasePojo;
+import com.affixus.simulation.pojo.BasePojo;
 
 /**
  * Created by santosh on 10/23/16.

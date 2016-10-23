@@ -1,17 +1,13 @@
-package com.example.santosh.simulation1.restful;
+package com.affixus.simulation.restful;
 
 import android.util.Log;
 
-import com.example.santosh.simulation1.pojo.response.ResponsePojo;
-
-import java.util.Locale;
+import com.affixus.simulation.pojo.response.ResponsePojo;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 /**
  * Created by santosh on 10/22/16.

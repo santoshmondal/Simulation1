@@ -1,4 +1,4 @@
-package com.example.santosh.simulation1.pojo;
+package com.affixus.simulation.pojo;
 
 /**
  * Created by santosh on 10/23/16.
