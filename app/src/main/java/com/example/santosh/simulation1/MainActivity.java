@@ -7,10 +7,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.santosh.simulation1.pojo.response.NewsPojo;
+import com.example.santosh.simulation1.pojo.response.ResponsePojo;
+import com.example.santosh.simulation1.restful.RestApi;
+import com.example.santosh.simulation1.util.JsonUtil;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String LOG_TAG = MainActivity.class.getName();
+    private static final String TAG = MainActivity.class.getName();
     private Button button;
     private Button button2;
 
@@ -33,14 +44,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Button b = (Button) v;
 
-            Log.i(LOG_TAG, (String) b.getText());
+            Log.i(TAG, (String) b.getText());
             Toast.makeText(this, b.getText(), Toast.LENGTH_SHORT).show();
+
+            apiHomeNews();
         } else if(v.getId() == R.id.button2) {
 
             Button b = (Button) v;
 
-            Log.i(LOG_TAG, (String) b.getText());
+            Log.i(TAG, (String) b.getText());
             Toast.makeText(this, b.getText(), Toast.LENGTH_SHORT).show();
+
+            apiHomeNews();
         }
+    }
+
+    public void apiHomeNews() {
+        Call<ResponsePojo> news = RestApi.firstApi.getNews();
+
+        news.enqueue(new Callback<ResponsePojo>() {
+            @Override
+            public void onResponse(Call<ResponsePojo> call, Response<ResponsePojo> response) {
+                try{
+                    Object data = response.body().getData();
+                    String json = JsonUtil.objectToJson(data);
+
+                    List<NewsPojo> newsList = (List<NewsPojo>) JsonUtil.jsonArrayToListObject(json, NewsPojo.class);
+                    Log.i(TAG, newsList.toString());
+                } catch(Exception e){
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePojo> call, Throwable t) {
+                Log.i(TAG, t.getMessage());
+            }
+        });
     }
 }
